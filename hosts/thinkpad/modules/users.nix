@@ -3,7 +3,7 @@
 {
   users.users."yujiqo" = {
     isNormalUser = true;
-    description = "Main user account";
+    description = "yujiqo";
     extraGroups = [ "networkmanager" "wheel" ];
   };
 }

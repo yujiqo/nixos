@@ -1,5 +1,5 @@
 {
-  description = "Thinkpad flake.";
+  description = "yujiqo's nixos flake.";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-26.05";
     home-manager.url = "github:nix-community/home-manager/release-26.05";
@@ -14,7 +14,11 @@
     nixosConfigurations = {
       thinkpad = lib.nixosSystem {
         inherit system;
-        modules = [ ./system/system.nix ];
+        modules = [ ./hosts/thinkpad/system-configuration.nix ];
+      };
+      tuf = lib.nixosSystem {
+        inherit system;
+        modules = [ ./hosts/tuf/system-configuration.nix ];
       };
     };
     homeConfigurations = {

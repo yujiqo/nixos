@@ -4,25 +4,21 @@
   home.homeDirectory = "/home/yujiqo";
   home.stateVersion = "26.05";
   home.packages = with pkgs; [
-    brave
-    kitty
     neovim
     tmux
     fastfetch
 
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    brave
+    kitty
+    obs-studio
+    discord
+    telegram-desktop
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+    steam
+    modrinth-app
   ];
+
+  nixpkgs.config.allowUnfree = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
