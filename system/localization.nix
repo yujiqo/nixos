@@ -21,7 +21,7 @@
   services.xserver.xkb = {
     layout = "us,ru";
     variant = "";
-    options = "grp:win_space_toggle";
+    options = "caps:swapescape,grp:win_space_toggle";
   };
   console.useXkbConfig = true;
 

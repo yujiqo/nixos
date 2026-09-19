@@ -2,7 +2,7 @@
 {
   options.yujiqo.swapCapsEscape = lib.mkOption {
     type = lib.types.bool;
-    default = true;
+    default = false;
     description = "Swap Caps Lock and Escape keys via xkb.";
   };
 

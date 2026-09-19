@@ -33,6 +33,7 @@
 
       set -g status-style "fg=#858585, bg=default"
       set -g status-right "#H"
+      set-option -g default-terminal "screen-256color"
 
       bind -T copy-mode    C-S-c send -X copy-pipe-no-clear "wl-copy"
       bind -T copy-mode-vi C-S-c send -X copy-pipe-no-clear "wl-copy"

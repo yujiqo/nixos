@@ -5,7 +5,7 @@
     shellAbbrs = {
       nvim = "nvim -p";
       quote = "fortune | cowsay";
-      os-switch="nixos-rebuild switch --flake";
+      os-switch="sudo nixos-rebuild switch --flake";
       home-switch="home-manager switch --flake";
     };
     interactiveShellInit = ''
