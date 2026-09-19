@@ -9,7 +9,7 @@
 
     gc = {
       automatic = true;
-      dates = "weakly";
+      dates = "weekly";
       options = "--delete-older-than 7d";
     };
   };
@@ -20,6 +20,7 @@
     busybox
     tmux
     git
+    ntfs3g
   ];
 
   system.stateVersion = "26.05";

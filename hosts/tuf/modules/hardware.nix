@@ -12,18 +12,19 @@
     pulse.enable = true;
     jack.enable = true;
   };
-  
-  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
   };
+  
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     open = true;
-    modesetting.enable = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+    modesetting.enable = true;
 
     prime = {
       sync.enable = true;

@@ -21,7 +21,22 @@
   services.xserver.xkb = {
     layout = "us,ru";
     variant = "";
-    options = "caps:swapescape,grp:win_space_toggle";
+    options = "grp:win_space_toggle";
   };
   console.useXkbConfig = true;
+
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      default = {
+        ids = [ "*" ];
+        settings = {
+          main = {
+            capslock = "escape";
+            escape = "capslock";
+          };
+        };
+      };
+    };
+  };
 }

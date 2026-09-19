@@ -18,8 +18,15 @@
 
     loader = {
       systemd-boot = {
-        enable = true;
+        enable = false;
         configurationLimit = 10;
+      };
+
+      grub = {
+        enable = true;
+	device = "nodev";
+	efiSupport = true;
+	useOSProber = true;
       };
 
       efi.canTouchEfiVariables = true;

@@ -4,8 +4,6 @@
     pkgs.neovim
     pkgs.tmux
     pkgs.fastfetch
-    pkgs.brave
-    pkgs.kitty
     pkgs.fuzzel
     pkgs.wl-clipboard
     pkgs.cowsay
@@ -14,7 +12,17 @@
     pkgs.ripgrep
     pkgs.fd
     pkgs.nodejs
-
     pkgs-unstable.opencode
+    
+    pkgs.brave
+    pkgs.kitty
+    pkgs.obs-studio
+    pkgs.discord
+    pkgs.telegram-desktop
+
+    pkgs.steam
+    pkgs.gamescope
+    pkgs.protonup-qt
+    pkgs.modrinth-app
   ];
 }
