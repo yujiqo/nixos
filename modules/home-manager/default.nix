@@ -1,3 +1,4 @@
 {
-  # List your module files here
+  packages = ./packages.nix;
+  git = ./programs/git.nix;
 }

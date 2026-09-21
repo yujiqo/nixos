@@ -1,6 +1,9 @@
-{ inputs, lib, config, pkgs, ... }: {
-  imports = [
-  ];
+{
+  inputs,
+  lib,
+  ...
+}: {
+  imports = lib.attrValues inputs.self.homeModules;
 
   nixpkgs = {
     overlays = [
@@ -17,17 +20,8 @@
   home = {
     username = "yujiqo";
     homeDirectory = "/home/yujiqo";
-
-    packages = [
-      pkgs.neovim
-      pkgs.kitty
-      pkgs.brave
-      pkgs.fuzzel
-    ];
+    stateVersion = "26.05";
   };
 
   programs.home-manager.enable = true;
-  programs.git.enable = true;
-
-  home.stateVersion = "26.05";
 }

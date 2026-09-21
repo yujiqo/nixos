@@ -9,7 +9,12 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... } @ inputs: let
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: let
     systems = [
       "aarch64-linux"
       "i686-linux"
@@ -25,7 +30,7 @@
 
     overlays = import ./overlays {inherit inputs;};
     nixosModules = import ./modules/nixos;
-    homeManagerModules = import ./modules/home-manager;
+    homeModules = import ./modules/home-manager;
 
     nixosConfigurations = {
       tuf = nixpkgs.lib.nixosSystem {
