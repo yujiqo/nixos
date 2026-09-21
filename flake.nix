@@ -1,52 +1,38 @@
 {
-  description = "yujiqo's nixos flake.";
+  description = "after some thinking... i have decided to stop thinking.";
+
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-26.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
-    let
-      systems = {
-        thinkpad = "x86_64-linux";
-        tuf = "x86_64-linux";
-        utm = "aarch64-linux";
-      };
 
-      homes = {
-        yujiqo = "x86_64-linux";
-        utm = "aarch64-linux";
-      };
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs: let
+    systems = [
+      "aarch64-linux"
+      "i686-linux"
+      "x86_64-linux"
+      "aarch64-darwin"
+      "x86_64-darwin"
+    ];
 
-      forSystems = f: nixpkgs.lib.genAttrs (nixpkgs.lib.attrNames systems) (name: f systems.${name});
-      pkgsFor = system: nixpkgs.legacyPackages.${system};
-      pkgsUnstableFor = system: nixpkgs-unstable.legacyPackages.${system};
-    in {
+    forAllSystems = nixpkgs.lib.genAttrs systems;
+  in {
+    packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+    formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
+
+    overlays = import ./overlays {inherit inputs;};
+    nixosModules = import ./modules/nixos;
+    homeManagerModules = import ./modules/home-manager;
+
     nixosConfigurations = {
-      thinkpad = nixpkgs.lib.nixosSystem {
-        system = systems.thinkpad;
-        modules = [ ./hosts/thinkpad/system-configuration.nix ];
-      };
       tuf = nixpkgs.lib.nixosSystem {
-        system = systems.tuf;
-        modules = [ ./hosts/tuf/system-configuration.nix ];
-      };
-      utm = nixpkgs.lib.nixosSystem {
-        system = systems.utm;
-        modules = [ ./hosts/utm/system-configuration.nix ];
-      };
-    };
-    homeConfigurations = {
-      yujiqo = home-manager.lib.homeManagerConfiguration {
-        pkgs = pkgsFor homes.yujiqo;
-        modules = [ ./home/home-configuration.nix ];
-        extraSpecialArgs = { pkgs-unstable = pkgsUnstableFor homes.yujiqo; };
-      };
-      utm = home-manager.lib.homeManagerConfiguration {
-        pkgs = pkgsFor homes.utm;
-        modules = [ ./home/home-configuration.nix { yujiqo.swapCapsEscape = false; } ];
-        extraSpecialArgs = { pkgs-unstable = pkgsUnstableFor homes.utm; };
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./nixos/configuration.nix
+        ];
       };
     };
   };
