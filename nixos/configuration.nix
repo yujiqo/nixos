@@ -62,7 +62,10 @@
   programs.niri.enable = true;
 
   services = {
-    displayManager.sddm.wayland.enable = true;
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
 
     openssh = {
       enable = true;
@@ -170,6 +173,7 @@
       timeout = 5;
     };
 
+    #kernelPackages = pkgs.linuxPackages_latest;
     kernelPackages = pkgs.linuxPackages;
   };
 
