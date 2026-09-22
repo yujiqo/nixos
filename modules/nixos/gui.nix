@@ -1,5 +1,6 @@
 {...}: {
   programs.fish.enable = true;
+  programs.starship.enable = true;
 
   programs.niri.enable = true;
 
