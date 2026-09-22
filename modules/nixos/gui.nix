@@ -1,4 +1,6 @@
 {...}: {
+  programs.fish.enable = true;
+
   programs.niri.enable = true;
 
   services.displayManager.sddm = {
