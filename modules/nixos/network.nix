@@ -8,8 +8,8 @@
     firewall = {
       enable = true;
 
-      trustedInterfaces = [ config.services.tailscale.interfaceName ];
-      allowedUDPPorts = [ config.services.tailscale.port ];
+      trustedInterfaces = [config.services.tailscale.interfaceName];
+      allowedUDPPorts = [config.services.tailscale.port];
     };
   };
 
@@ -26,7 +26,7 @@
     enable = true;
   };
 
-  systemd.services.tailscaled.serviceConfig.Environment = [ "TS_DEBUG_FIREWALL_MODE=nftables"];
+  systemd.services.tailscaled.serviceConfig.Environment = ["TS_DEBUG_FIREWALL_MODE=nftables"];
   systemd.network.wait-online.enable = false;
   boot.initrd.systemd.network.wait-online.enable = false;
 }
