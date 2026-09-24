@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     git
-
     fastfetch
+    autossh
 
     eza
     btop
