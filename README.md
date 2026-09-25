@@ -21,8 +21,8 @@ nix fmt                                        # format each file with alejandra
 | `modules/home-manager/` | `packages.nix` (what's installed), `symlinks.nix` (dotfiles → `~/.config`) |
 | `overlays/` | `additions` (local pkgs), `modifications` (empty for now), `unstable-packages` (`pkgs.unstable`) |
 | `pkgs/` | Custom packages (empty, waiting for a reason) |
-| `yurice/` | ⚠️ Separate git repo. The rice itself |
-| `dotfiles/` | ⚠️ Separate git repo. Plain-text configs — git, opencode, that contain me-specific settings |
+| [`yurice/`](https://github.com/yujiqo/yurice) | ⚠️ Separate git repo. The rice itself |
+| [`dotfiles/`](https://github.com/yujiqo/dotfiles) | ⚠️ Separate git repo. Plain-text configs — git, opencode, that contain me-specific settings |
 
 `yurice` and `dotfiles` are gitignored here and live in their own repos.
 `symlinks.nix` symlinks their `config/` dirs into `~/.config` — so they stay editable
