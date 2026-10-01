@@ -1,31 +1,39 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    git
-    fastfetch
-    autossh
-    unzip
-
+    # useful utils
     eza
     btop
     duf
     fzf
     ripgrep
     fd
+    autossh
+    fastfetch
+    unzip
 
+    # fonts
     nerd-fonts.comic-shanns-mono
 
+    # og coding tooling
+    git
     neovim
-    tree-sitter
-    gcc
-    python3
-    rustup
-    nodejs
+    tmux
 
+    # tools needed for coding
+    tree-sitter
+    rustup
+    gcc
+    nodejs
+    python3
+
+    # rice related
     fuzzel
 
+    # desktop apps
     kitty
     firefox
 
+    # unstable stuff
     unstable.opencode
   ];
 }
