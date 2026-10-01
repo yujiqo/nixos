@@ -16,7 +16,7 @@
     fuzzel
 
     kitty
-    brave
+    firefox
 
     unstable.opencode
   ];
