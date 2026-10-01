@@ -36,5 +36,6 @@
 
     # unstable stuff
     unstable.opencode
+    unstable.tetro-tui
   ];
 }
