@@ -32,6 +32,7 @@
     # desktop apps
     kitty
     firefox
+    telegram-desktop
 
     # unstable stuff
     unstable.opencode
