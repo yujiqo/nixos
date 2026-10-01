@@ -3,13 +3,24 @@
     hostName = "tuf";
 
     nftables.enable = true;
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      dns = "systemd-resolved";
+    };
 
     firewall = {
       enable = true;
 
       trustedInterfaces = [config.services.tailscale.interfaceName];
       allowedUDPPorts = [config.services.tailscale.port];
+    };
+  };
+
+  services.resolved = {
+    enable = true;
+    settings.Resolve = {
+      DNSSEC = "true";
+      fallbackDns = [ "1.1.1.1" "8.8.8.8" ];
     };
   };
 
