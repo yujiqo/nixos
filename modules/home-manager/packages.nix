@@ -11,6 +11,8 @@
     ripgrep
     fd
 
+    nerd-fonts.comic-shanns-mono
+
     neovim
 
     fuzzel
