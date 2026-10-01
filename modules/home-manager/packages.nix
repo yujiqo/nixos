@@ -3,6 +3,7 @@
     git
     fastfetch
     autossh
+    unzip
 
     eza
     btop
@@ -14,6 +15,11 @@
     nerd-fonts.comic-shanns-mono
 
     neovim
+    tree-sitter
+    gcc
+    python3
+    rustup
+    nodejs
 
     fuzzel
 
