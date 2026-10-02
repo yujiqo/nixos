@@ -12,14 +12,9 @@ in {
     force = true;
     recursive = true;
   };
-  xdg.configFile."kitty" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${yurice}/kitty";
-    force = true;
-    recursive = true;
-  };
-  xdg.configFile."kitty/kitty.local.conf" = {
-    text = "shell ${pkgs.fish}/bin/fish";
-  };
+  xdg.configFile."kitty/current-theme.conf".source = config.lib.file.mkOutOfStoreSymlink "${yurice}/kitty/current-theme.conf";
+  xdg.configFile."kitty/kitty.conf".source = config.lib.file.mkOutOfStoreSymlink "${yurice}/kitty/kitty.conf";
+  xdg.configFile."kitty/kitty.local.conf".text = "shell ${pkgs.fish}/bin/fish";
   xdg.configFile."fish" = {
     source = config.lib.file.mkOutOfStoreSymlink "${yurice}/fish";
     force = true;
