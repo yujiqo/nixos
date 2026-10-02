@@ -7,12 +7,16 @@
 
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    nix-darwin,
     ...
   } @ inputs: let
     systems = [
@@ -30,13 +34,26 @@
 
     overlays = import ./overlays {inherit inputs;};
     nixosModules = import ./modules/nixos;
-    homeModules = import ./modules/home-manager;
+    darwinModules = import ./modules/darwin;
+    homeModules = {
+      linux = import ./modules/home-manager/linux;
+      darwin = import ./modules/home-manager/darwin;
+    };
 
     nixosConfigurations = {
       tuf = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
-          ./nixos/configuration.nix
+          ./hosts/tuf/nixos/configuration.nix
+        ];
+      };
+    };
+
+    darwinConfigurations = {
+      macbook = nix-darwin.lib.darwinSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/macbook/darwin/configuration.nix
         ];
       };
     };

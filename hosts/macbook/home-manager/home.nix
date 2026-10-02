@@ -3,7 +3,7 @@
   lib,
   ...
 }: {
-  imports = lib.attrValues inputs.self.homeModules;
+  imports = lib.attrValues inputs.self.homeModules.darwin;
 
   nixpkgs = {
     overlays = [
@@ -19,9 +19,11 @@
 
   home = {
     username = "yujiqo";
-    homeDirectory = "/home/yujiqo";
+    homeDirectory = "/Users/yujiqo";
     stateVersion = "26.05";
   };
+
+  programs.man.generateCaches = false;
 
   programs.home-manager.enable = true;
 }
