@@ -19,7 +19,7 @@
   services.resolved = {
     enable = true;
     settings.Resolve = {
-      DNSSEC = "true";
+      DNSSEC = "allow-downgrade";
       fallbackDns = [ "1.1.1.1" "8.8.8.8" ];
     };
   };
