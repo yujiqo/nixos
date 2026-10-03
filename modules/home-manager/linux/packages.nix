@@ -29,9 +29,11 @@
     fuzzel
 
     # desktop apps
+    xwayland-satellite
     kitty
     firefox
     telegram-desktop
+    steam
 
     # unstable stuff
     unstable.opencode
