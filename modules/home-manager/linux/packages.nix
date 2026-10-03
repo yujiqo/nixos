@@ -20,7 +20,6 @@
     tmux
 
     # tools needed for coding
-    tree-sitter
     rustup
     gcc
     nodejs
