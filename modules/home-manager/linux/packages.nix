@@ -26,6 +26,7 @@
     python3
 
     # rice related
+    nautilus
     fuzzel
 
     # desktop apps
