@@ -1,39 +1,50 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    # useful utils
-    eza
-    btop
-    duf
-    fzf
-    ripgrep
-    fd
-    autossh
-    fastfetch
-    unzip
-    starship
-    glow
+    # cli utils
+    eza # better ls
+    btop # better top
+    duf # storage checker
+    fzf # search stuff
+    ripgrep # search stuff
+    fd # search stuff
+    autossh # run ssh tunnels
+    unzip # unzip zip files
+    glow # preview md files
+    starship # fish prompt stylizer
+    fastfetch # cool stats about system
 
     # fonts
-    nerd-fonts.comic-shanns-mono
+    nerd-fonts.comic-shanns-mono # comic sans mono
 
     # og coding tooling
-    git
-    neovim
-    tmux
+    git # og version control
+    neovim # og text editor
+    tmux # og terminal multiplexer
 
-    # tools needed for coding
-    rustup
-    gcc
-    nodejs
-    python3
+    # programming languages
+    rustup # rust
+    gcc # c/c++
+    nodejs # javascript
+    python3 # python
+
+    # lsp servers, formatters, linters
+    efm-langserver # formatter and linter thing for neovim
+    selene # lua lint
+    stylua # lua fmt
+    lua-language-server # lua lsp
+    alejandra # nix fmt
+    nil # nix lsp
+    pyright # python lsp
+    svelte-language-server # svelte lsp
+    qt6.qtdeclarative # qml lsp
 
     # desktop apps
-    kitty
-    firefox
-    telegram-desktop
+    kitty # terminal emulator
+    firefox # web browser
+    telegram-desktop # messanger
 
     # unstable stuff
-    unstable.opencode
-    unstable.tetro-tui
+    unstable.opencode # ai agents
+    unstable.tetro-tui # tetris in terminal
   ];
 }
