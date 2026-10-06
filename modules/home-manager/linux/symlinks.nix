@@ -1,4 +1,8 @@
-{config, pkgs, ...}: let
+{
+  config,
+  pkgs,
+  ...
+}: let
   yurice = "${config.home.homeDirectory}/.nixos/yurice/config";
   dotfiles = "${config.home.homeDirectory}/.nixos/dotfiles/config";
 in {
