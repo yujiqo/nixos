@@ -38,6 +38,11 @@ in {
     force = true;
     recursive = true;
   };
+  xdg.configFile."quickshell" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${yurice}/quickshell";
+    force = true;
+    recursive = true;
+  };
 
   xdg.configFile."git" = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/git";
