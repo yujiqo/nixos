@@ -36,6 +36,7 @@
     firefox
     telegram-desktop
     steam
+    modrinth-app
 
     # unstable stuff
     unstable.opencode
