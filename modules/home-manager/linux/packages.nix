@@ -10,6 +10,7 @@
     autossh
     fastfetch
     unzip
+    glow
 
     # fonts
     nerd-fonts.comic-shanns-mono

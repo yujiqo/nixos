@@ -11,6 +11,7 @@
     fastfetch
     unzip
     starship
+    glow
 
     # fonts
     nerd-fonts.comic-shanns-mono
