@@ -35,6 +35,12 @@
     pyright # python lsp
     svelte-language-server # svelte lsp
     qt6.qtdeclarative # qml lsp
+    prettier # markdown fmt (and others)
+    marksman # markdown lsp
+
+    # dependencies that don't belong anywhere
+    imagemagick # image.nvim dep
+    ghostscript # image.nvim dep for pdf files
 
     # rice related stuff
     quickshell # widget builder
