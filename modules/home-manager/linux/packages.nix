@@ -49,6 +49,8 @@
     fastfetch # cool stats about system
     nautilus # file explorer
     fuzzel # temporary app launcher
+    playerctl # media keys
+    brightnessctl # backlight control
 
     # desktop applications
     xwayland-satellite # X11 apps on wayland
