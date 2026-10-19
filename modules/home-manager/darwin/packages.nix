@@ -40,6 +40,8 @@
     qt6.qtdeclarative # qml lsp
     prettier # markdown fmt (and others)
     marksman # markdown lsp
+    sql-formatter # sql fmt
+    sqls # sql lsp
 
     # dependencies that don't belong anywhere
     imagemagick # image.nvim dep
