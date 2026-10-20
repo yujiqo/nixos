@@ -20,10 +20,12 @@
     tmux # og terminal multiplexer
 
     # programming languages
-    rustup # rust
-    gcc # c/c++
+    rustup # rust tools manager
+    gcc # c/c++ compiler
     nodejs # javascript
+    uv # python package manager
     python3 # python
+    postgresql # sql db
 
     # lsp servers, formatters, linters
     efm-langserver # formatter and linter thing for neovim
