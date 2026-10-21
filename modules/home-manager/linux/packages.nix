@@ -58,6 +58,7 @@
     xwayland-satellite # X11 apps on wayland
     kitty # terminal emulator
     firefox # web browser
+    helium-browser # privacy-focused web browser
     telegram-desktop # messanger
     steam # games
     modrinth-app # minecraft modding launcher

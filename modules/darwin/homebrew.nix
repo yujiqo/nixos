@@ -20,6 +20,7 @@
 
     casks = [
       "karabiner-elements"
+      "helium-browser"
       "keka"
       "audacity"
       "mos"

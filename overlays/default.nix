@@ -1,5 +1,12 @@
 {inputs, ...}: {
-  additions = final: _prev: import ../pkgs final.pkgs;
+  additions = final: prev:
+    if prev.stdenv.hostPlatform.system == "x86_64-linux"
+    then
+      import ../pkgs {
+        pkgs = prev;
+        system = prev.stdenv.hostPlatform.system;
+      }
+    else {};
 
   modifications = final: prev: {
   };
