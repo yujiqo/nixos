@@ -38,6 +38,10 @@ in {
     force = true;
     recursive = true;
   };
+  home.file.".lesskey" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${yurice}/less/key";
+    force = true;
+  };
   xdg.configFile."quickshell" = {
     source = config.lib.file.mkOutOfStoreSymlink "${yurice}/quickshell";
     force = true;

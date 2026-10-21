@@ -36,6 +36,10 @@ in {
     force = true;
     recursive = true;
   };
+  home.file.".lesskey" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${yurice}/less/key";
+    force = true;
+  };
 
   xdg.configFile."git" = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/git";
