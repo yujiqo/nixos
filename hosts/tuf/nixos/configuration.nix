@@ -8,6 +8,10 @@
     [
       ./hardware-configuration.nix
 
+      ./modules/hardware.nix
+      ./modules/users.nix
+      ./modules/network.nix
+
       inputs.home-manager.nixosModules.home-manager
     ]
     ++ lib.attrValues inputs.self.nixosModules;
