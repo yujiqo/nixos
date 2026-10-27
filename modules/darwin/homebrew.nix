@@ -22,7 +22,9 @@
       "karabiner-elements"
       "helium-browser"
       "keka"
+      "blender"
       "audacity"
+      "gimp"
       "mos"
       "quicklook-video"
     ];
