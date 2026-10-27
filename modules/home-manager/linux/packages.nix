@@ -63,6 +63,7 @@
     telegram-desktop # messanger
     steam # games
     modrinth-app # minecraft modding launcher
+    libreoffice # opensorce office
 
     # unstable stuff
     unstable.opencode # ai agents
