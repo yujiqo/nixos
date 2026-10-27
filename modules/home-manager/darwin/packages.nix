@@ -20,7 +20,6 @@
     git # og version control
     neovim # og text editor
     tmux # og terminal multiplexer
-    claude-code # og agentic antropic tool
 
     # programming languages
     rustup # rust tools manager
@@ -55,6 +54,7 @@
     telegram-desktop # messanger
 
     # unstable stuff
+    unstable.claude-code # og ai agents
     unstable.opencode # ai agents
     unstable.tetro-tui # tetris in terminal
   ];
