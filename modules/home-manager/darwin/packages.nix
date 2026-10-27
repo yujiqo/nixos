@@ -20,13 +20,13 @@
     git # og version control
     neovim # og text editor
     tmux # og terminal multiplexer
+    claude-code # og agentic antropic tool
 
     # programming languages
     rustup # rust tools manager
     gcc # c/c++ compiler
     nodejs # javascript
     uv # python package manager
-    python3 # python
     postgresql # sql db
 
     # lsp servers, formatters, linters
@@ -36,6 +36,7 @@
     lua-language-server # lua lsp
     alejandra # nix fmt
     nil # nix lsp
+    ruff # python lint & fmt
     pyright # python lsp
     svelte-language-server # svelte lsp
     qt6.qtdeclarative # qml lsp
