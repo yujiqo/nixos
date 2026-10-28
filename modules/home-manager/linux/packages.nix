@@ -25,6 +25,7 @@
     nodejs # javascript
     uv # python package manager
     postgresql # sql db
+    dotnet-sdk # c# tools
 
     # lsp servers, formatters, linters
     efm-langserver # formatter and linter thing for neovim
