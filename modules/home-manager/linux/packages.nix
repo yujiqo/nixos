@@ -56,6 +56,7 @@
 
     # desktop applications
     xwayland-satellite # X11 apps on wayland
+    obs-studio # screen recordings and streaming app
     kitty # terminal emulator
     firefox # web browser
     helium-browser # privacy-focused web browser
@@ -63,6 +64,7 @@
     steam # games
     modrinth-app # minecraft modding launcher
     libreoffice # opensorce office
+    gimp
 
     # unstable stuff
     unstable.claude-code # og ai agents
