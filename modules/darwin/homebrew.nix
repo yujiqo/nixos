@@ -19,8 +19,10 @@
     ];
 
     casks = [
+      "kitty"
+      "firefox"
+      "telegram-desktop"
       "karabiner-elements"
-      "helium-browser"
       "keka"
       "blender"
       "audacity"
