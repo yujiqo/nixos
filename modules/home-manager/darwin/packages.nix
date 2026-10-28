@@ -49,11 +49,6 @@
     imagemagick # image.nvim dep
     ghostscript # image.nvim dep for pdf files
 
-    # desktop apps
-    kitty # terminal emulator
-    firefox # web browser
-    telegram-desktop # messanger
-
     # unstable stuff
     unstable.claude-code # og ai agents
     unstable.opencode # ai agents
