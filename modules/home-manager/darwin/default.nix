@@ -1,4 +1,4 @@
 {
-  packages = ./packages.nix;
+  cli = ./cli.nix;
   symlinks = ./symlinks.nix;
 }

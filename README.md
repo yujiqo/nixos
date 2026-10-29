@@ -24,13 +24,14 @@ nix fmt                                         # format each file with alejandr
 | ---- | ---------- |
 | `flake.nix` | Entry point. Defines hosts, exports packages, overlays, modules, formatter |
 | `hosts/tuf/nixos/` | `configuration.nix` + generated `hardware-configuration.nix` |
-| `hosts/tuf/home-manager/` | User config (`home.nix` for `yujiqo`) |
+| `hosts/tuf/home-manager/` | User config (`home.nix` for `yujiqo`) + `modules/` for host-only packages |
 | `hosts/macbook/darwin/` | `configuration.nix` for nix-darwin |
 | `hosts/macbook/home-manager/` | Same user config, but for darwin (`/Users/yujiqo`) |
 | `modules/nixos/` | NixOS system modules, wired up via `lib.attrValues` |
 | `modules/darwin/` | nix-darwin system modules, same idea |
-| `modules/home-manager/linux/` | `packages.nix` + `symlinks.nix` for NixOS |
-| `modules/home-manager/darwin/` | Same, for macOS |
+| `modules/home-manager/common/` | Packages every host gets, split by purpose: `cli`, `dev`, `neovim`, `ai`, `fonts` |
+| `modules/home-manager/linux/` | Linux-only: `desktop`, `apps`, `symlinks`, `theme` |
+| `modules/home-manager/darwin/` | macOS-only: `cli`, `symlinks` |
 | `overlays/` | `additions` (local pkgs), `modifications` (empty for now), `unstable-packages` (`pkgs.unstable`) |
 | `pkgs/` | Custom packages (empty, waiting for a reason) |
 | [`yurice/`](https://github.com/yujiqo/yurice) | ⚠️ Separate git repo. The rice itself |
@@ -43,7 +44,7 @@ without a rebuild (out-of-store symlinks).
 ## Conventions
 
 - Modules are small, wired up via `lib.attrValues` in the entry points
-- Each host's `home.nix` picks its own platform set: `homeModules.linux` or `homeModules.darwin`
+- Each host's `home.nix` imports `homeModules.common`, its platform set (`homeModules.linux` or `homeModules.darwin`), and its own `modules/default.nix`
 - `hardware-configuration.nix` is machine-generated, don't hand-edit
 - Formatting is `alejandra`; run `nix fmt` to auto format
 - All program configs configured with their specific format even if they have home-manager options

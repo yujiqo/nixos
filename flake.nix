@@ -40,6 +40,7 @@
     nixosModules = import ./modules/nixos;
     darwinModules = import ./modules/darwin;
     homeModules = {
+      common = import ./modules/home-manager/common;
       linux = import ./modules/home-manager/linux;
       darwin = import ./modules/home-manager/darwin;
     };

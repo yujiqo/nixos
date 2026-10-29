@@ -3,7 +3,10 @@
   lib,
   ...
 }: {
-  imports = lib.attrValues inputs.self.homeModules.darwin;
+  imports =
+    lib.attrValues (import ./modules)
+    ++ lib.attrValues inputs.self.homeModules.common
+    ++ lib.attrValues inputs.self.homeModules.darwin;
 
   nixpkgs = {
     overlays = [
