@@ -16,6 +16,7 @@
 
     # og coding tooling
     git # og version control
+    lazygit # og tui for git
     neovim # og text editor
     tmux # og terminal multiplexer
 
