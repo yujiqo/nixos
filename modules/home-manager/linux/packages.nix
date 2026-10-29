@@ -10,6 +10,7 @@
     fd # search stuff
     autossh # run ssh tunnels
     unzip # unzip zip files
+    bluetuith # tui for bluetooth
 
     # fonts
     nerd-fonts.comic-shanns-mono # comic sans mono
