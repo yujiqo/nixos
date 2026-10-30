@@ -59,6 +59,10 @@
     thermald.enable = true;
     upower.enable = true;
     power-profiles-daemon.enable = true;
+
+    udev.extraRules = ''
+      SUBSYSTEM=="power_supply", KERNEL=="BAT0", ENV{CHARGE_LIMIT}="85,90"
+    '';
   };
 
   console.useXkbConfig = true;
