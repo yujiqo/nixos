@@ -24,4 +24,6 @@
     platformTheme = "gnome";
     style = "adwaita-dark";
   };
+
+  programs.localsend.enable = true;
 }
