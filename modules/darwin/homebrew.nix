@@ -21,6 +21,7 @@
     casks = [
       "kitty"
       "firefox"
+      "google-chrome"
       "telegram-desktop"
       "karabiner-elements"
       "keka"
