@@ -19,6 +19,7 @@
     ];
 
     casks = [
+      "obs"
       "kitty"
       "firefox"
       "google-chrome"
