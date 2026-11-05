@@ -8,7 +8,7 @@
     xwayland-satellite # X11 apps on wayland
     bluetuith # tui for bluetooth
     material-symbols # icon font by google
-    nerd-fonts.agave # main system font
+    nerd-fonts.agave # main system font which is downloaded on all of my machines in "../common/fonts.nix"
   ];
 
   # quicklook-like previewer for nautilus
