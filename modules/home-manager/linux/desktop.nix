@@ -7,6 +7,8 @@
     brightnessctl # backlight control
     xwayland-satellite # X11 apps on wayland
     bluetuith # tui for bluetooth
+    material-symbols # icon font by google
+    nerd-fonts.agave # main system font
   ];
 
   # quicklook-like previewer for nautilus
