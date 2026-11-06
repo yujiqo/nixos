@@ -10,6 +10,7 @@
     autossh # run ssh tunnels
     unzip # unzip zip files
     fastfetch # cool stats about system
+    jq # parse json
     unstable.tetro-tui # tetris in terminal
   ];
 }
