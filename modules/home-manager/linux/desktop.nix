@@ -9,6 +9,7 @@
     bluetuith # tui for bluetooth
     material-symbols # icon font by google
     nerd-fonts.agave # main system font which is downloaded on all of my machines in "../common/fonts.nix"
+    matugen # color generation tool
   ];
 
   # quicklook-like previewer for nautilus
