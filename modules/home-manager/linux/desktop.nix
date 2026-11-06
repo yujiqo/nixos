@@ -16,4 +16,7 @@
   # and extra codecs (h264/hevc) for sushi video previews
   dbus.packages = [pkgs.sushi];
   systemd.user.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 = "${pkgs.gst_all_1.gst-libav}/lib/gstreamer-1.0";
+
+  # stop blueman's connect/disconnect popups (ConnectionNotifier plugin)
+  dconf.settings."org/blueman/general".plugin-list = ["!ConnectionNotifier"];
 }
