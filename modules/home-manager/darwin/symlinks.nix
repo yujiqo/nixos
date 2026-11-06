@@ -55,4 +55,8 @@ in {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/karabiner/karabiner.json";
     force = true;
   };
+  home.file.".claude/settings.json" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/settings.json";
+    force = true;
+  };
 }

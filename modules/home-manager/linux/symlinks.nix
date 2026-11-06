@@ -58,4 +58,8 @@ in {
     force = true;
     recursive = true;
   };
+  home.file.".claude/settings.json" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/settings.json";
+    force = true;
+  };
 }
