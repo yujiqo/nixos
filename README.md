@@ -16,6 +16,7 @@ _after some thinking... i have decided to stop thinking._
 ![platforms](https://img.shields.io/badge/platforms-x86__64--linux%20·%20aarch64--darwin-1e1e2e?style=flat-square)
 ![wm](https://img.shields.io/badge/wm-niri-1e1e2e?style=flat-square)
 ![shell](https://img.shields.io/badge/shell-fish-1e1e2e?style=flat-square&logoColor=white)
+[![license](https://img.shields.io/badge/license-MIT-1e1e2e?style=flat-square)](LICENSE)
 
 </div>
 
@@ -152,6 +153,7 @@ nix flake show     # list what the flake exports
 <div align="center">
 <sub>
   rice: <a href="https://github.com/yujiqo/yurice">yurice</a> ·
-  configs: <a href="https://github.com/yujiqo/dotfiles">dotfiles</a>
+  configs: <a href="https://github.com/yujiqo/dotfiles">dotfiles</a> ·
+  <a href="LICENSE">MIT</a>
 </sub>
 </div>
