@@ -15,6 +15,7 @@
     wtype # pastes clipboard history entries
     realesrgan-ncnn-vulkan # wallpaper upscaling
     imagemagick # wallpaper resolutions and resizing
+    libnotify # notify-send for testing notifications
   ];
 
   # clipboard history for the launcher
