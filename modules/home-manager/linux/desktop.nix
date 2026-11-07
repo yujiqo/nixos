@@ -10,7 +10,16 @@
     material-symbols # icon font by google
     nerd-fonts.agave # main system font which is downloaded on all of my machines in "../common/fonts.nix"
     matugen # color generation tool
+    wl-clipboard # clipboard cli for the launcher
+    libqalculate # qalc for the launcher calculator
+    wtype # pastes clipboard history entries
   ];
+
+  # clipboard history for the launcher
+  services.cliphist = {
+    enable = true;
+    allowImages = true;
+  };
 
   # quicklook-like previewer for nautilus
   # and extra codecs (h264/hevc) for sushi video previews
