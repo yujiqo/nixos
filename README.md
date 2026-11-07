@@ -148,6 +148,12 @@ nix flake show     # list what the flake exports
 - `hardware-configuration.nix` is machine-generated, so don't edit it by hand.
 - format before committing. `nix fmt .` (alejandra).
 
+## Credits
+
+- [nix-starter-configs](https://github.com/Misterio77/nix-starter-configs) - which is the ultimate template for any nixos configuration imo. this helped me so much after i've rewriten my entire configuration several times.
+- [nixmap](https://vimjoyer.com/nixmap/) - by vimjoyer the ultimate nix learning tool, that i found recently.
+- all people who make guides on youtube - thank you everyone.
+
 ---
 
 <div align="center">
