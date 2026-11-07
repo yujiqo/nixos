@@ -26,18 +26,4 @@
   };
 
   programs.localsend.enable = true;
-
-  services.geoclue2 = {
-    enable = true;
-    appConfig.geoclue-where-am-i = {
-      isAllowed = true;
-      isSystem = true;
-    };
-  };
-
-  environment.systemPackages = [
-    (pkgs.writeShellScriptBin "where-am-i" ''
-      exec ${pkgs.geoclue2}/libexec/geoclue-2.0/demos/where-am-i "$@"
-    '')
-  ];
 }
