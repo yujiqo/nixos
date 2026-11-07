@@ -152,8 +152,8 @@ nix flake show     # list what the flake exports
 
 <div align="center">
 <sub>
-  rice: <a href="https://github.com/yujiqo/yurice">yurice</a> ·
-  configs: <a href="https://github.com/yujiqo/dotfiles">dotfiles</a> ·
+  <a href="https://github.com/yujiqo/yurice">yurice</a> ·
+  <a href="https://github.com/yujiqo/dotfiles">dotfiles</a> ·
   <a href="LICENSE">MIT</a>
 </sub>
 </div>
