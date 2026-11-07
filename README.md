@@ -11,11 +11,11 @@ _after some thinking... i have decided to stop thinking._
 [![home-manager](https://img.shields.io/badge/home--manager-26.05-5277C3?style=for-the-badge&logo=nixos&logoColor=white)](https://github.com/nix-community/home-manager)
 [![nix-darwin](https://img.shields.io/badge/nix--darwin-26.05-7EBAE4?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/nix-darwin/nix-darwin)
 
-![flakes](https://img.shields.io/badge/flakes-enabled-1e1e2e?style=flat-square&logo=snowflake&logoColor=7EBAE4)
+![flakes](https://img.shields.io/badge/flakes-enabled-1e1e2e?style=flat-square&logoColor=7EBAE4)
 ![formatter](https://img.shields.io/badge/fmt-alejandra-1e1e2e?style=flat-square)
 ![platforms](https://img.shields.io/badge/platforms-x86__64--linux%20·%20aarch64--darwin-1e1e2e?style=flat-square)
 ![wm](https://img.shields.io/badge/wm-niri-1e1e2e?style=flat-square)
-![shell](https://img.shields.io/badge/shell-fish-1e1e2e?style=flat-square&logo=fishshell&logoColor=white)
+![shell](https://img.shields.io/badge/shell-fish-1e1e2e?style=flat-square&logoColor=white)
 
 </div>
 
@@ -34,7 +34,7 @@ one user (`yujiqo`). stable `nixos-26.05` everywhere, `nixpkgs-unstable` only wh
 
 shared across hosts
 
-- desktop (linux): [niri](https://github.com/YaLTeR/niri) + quickshell, SDDM on wayland, adw-gtk3 dark, gnome/gtk portals
+- desktop (linux): niri + quickshell, SDDM on wayland, adw-gtk3 dark, gnome/gtk portals
 - shell: fish + starship, kitty, tmux, neovim
 - network: tailscale, ssh with keys only and no root login, nftables firewall that trusts the tailscale interface, systemd-resolved with `DNSSEC=allow-downgrade`
 - nix: flakes, no channels, no global registry, `auto-optimise-store`, weekly gc of anything older than 7 days
@@ -43,51 +43,6 @@ shared across hosts
 ---
 
 ## Layout
-
-### how it wires together
-
-```mermaid
-flowchart LR
-  flake["flake.nix"]
-
-  subgraph outputs["flake outputs"]
-    direction TB
-    nixosCfg["nixosConfigurations<br/>tuf · thinkpad"]
-    darwinCfg["darwinConfigurations<br/>macbook"]
-    overlays["overlays<br/>additions · modifications · unstable-packages"]
-  end
-
-  subgraph system["system layer"]
-    direction TB
-    hostCfg["hosts/*/nixos|darwin/configuration.nix"]
-    sysMods["nixosModules / darwinModules"]
-  end
-
-  subgraph home["home-manager layer"]
-    direction TB
-    homeNix["hosts/*/home-manager/home.nix"]
-    hostMods["host modules/"]
-    common["homeModules.common"]
-    platform["homeModules.linux | darwin"]
-  end
-
-  subgraph external["separate repos (gitignored)"]
-    direction TB
-    yurice["yurice/config"]
-    dotfiles["dotfiles/config"]
-  end
-
-  cfg["~/.config"]
-
-  flake --> nixosCfg & darwinCfg & overlays
-  nixosCfg & darwinCfg --> hostCfg
-  hostCfg -- "lib.attrValues" --> sysMods
-  hostCfg -- "home-manager" --> homeNix
-  overlays -. "pkgs.unstable" .-> hostCfg & homeNix
-  homeNix -- "lib.attrValues" --> hostMods & common & platform
-  platform -- "symlinks.nix" --> cfg
-  yurice & dotfiles -. "mkOutOfStoreSymlink" .-> cfg
-```
 
 ### tree
 
@@ -118,8 +73,8 @@ flowchart LR
 > [!NOTE]
 > **`yurice/` and `dotfiles/` are separate git repos.** they're gitignored here and cloned inside this one.
 >
-> - [**yurice**](https://github.com/yujiqo/yurice): the rice. niri, quickshell, nvim, kitty, fish, starship, tmux, fastfetch, less, matugen
-> - [**dotfiles**](https://github.com/yujiqo/dotfiles): configs with personal settings. git, opencode, karabiner (mac), claude code
+> - [**yurice**](https://github.com/yujiqo/yurice): the rice.
+> - [**dotfiles**](https://github.com/yujiqo/dotfiles): configs with personal settings.
 >
 > `symlinks.nix` links their `config/` dirs into `~/.config` with `mkOutOfStoreSymlink`, so you can edit them live without a rebuild.
 
@@ -197,7 +152,6 @@ nix flake show     # list what the flake exports
 <div align="center">
 <sub>
   rice: <a href="https://github.com/yujiqo/yurice">yurice</a> ·
-  configs: <a href="https://github.com/yujiqo/dotfiles">dotfiles</a> ·
-  built with <a href="https://nixos.org">nix</a> ❄️
+  configs: <a href="https://github.com/yujiqo/dotfiles">dotfiles</a>
 </sub>
 </div>
