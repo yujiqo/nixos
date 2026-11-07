@@ -52,9 +52,7 @@
           ./hosts/thinkpad/nixos/configuration.nix
         ];
       };
-    };
 
-    nixosConfigurations = {
       tuf = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
