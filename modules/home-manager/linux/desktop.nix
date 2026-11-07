@@ -13,6 +13,8 @@
     wl-clipboard # clipboard cli for the launcher
     libqalculate # qalc for the launcher calculator
     wtype # pastes clipboard history entries
+    realesrgan-ncnn-vulkan # wallpaper upscaling
+    imagemagick # wallpaper resolutions and resizing
   ];
 
   # clipboard history for the launcher
