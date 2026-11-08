@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   programs.fish.enable = true;
   programs.starship.enable = true;
 
@@ -22,8 +26,9 @@
   qt = {
     enable = true;
     platformTheme = "gnome";
-    style = "adwaita-dark";
+    style = "adwaita";
   };
+  environment.variables.QT_STYLE_OVERRIDE = lib.mkForce null;
 
   programs.localsend.enable = true;
 }
