@@ -86,11 +86,11 @@
     "yurice": {
       "flake": false,
       "locked": {
-        "lastModified": 1794160273,
-        "narHash": "sha256-FQWb/n6jsorapO4T8KNytWVXgVoQm3oK0urPw4tfKAI=",
+        "lastModified": 1794162376,
+        "narHash": "sha256-DfpXIGzppP4ZzLlYizZk7kI1Fn2qHzv7R768Zaa0nVg=",
         "ref": "refs/heads/main",
-        "rev": "9f92c1fe46e476e8ad1be1708dac869534a7a296",
-        "revCount": 166,
+        "rev": "5a8ea86d4c7c312b4e8808b15d7d6d60818df6d2",
+        "revCount": 168,
         "type": "git",
         "url": "file:///home/yujiqo/.nixos/yurice"
       },
