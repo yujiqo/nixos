@@ -42,6 +42,10 @@
     }
   '';
 
+  greeterSession = pkgs.writeShellScript "yurice-greeter-session" ''
+    exec ${pkgs.niri}/bin/niri -c ${greeterNiriConfig} >/dev/null 2>&1
+  '';
+
   normalUsers = lib.filterAttrs (_: user: user.isNormalUser) config.users.users;
 in {
   assertions = [
@@ -58,8 +62,15 @@ in {
 
   services.greetd = {
     enable = true;
-    settings.default_session.command = "${pkgs.niri}/bin/niri -c ${greeterNiriConfig}";
+    settings.default_session.command = "${greeterSession}";
   };
+
+  systemd.services.greetd.serviceConfig.ExecStartPre = "-${pkgs.writeShellScript "yurice-hide-login-console" ''
+    for color in 0 1 2 3 4 5 6 7 8 9 A B C D E F; do
+      printf '\033]P%s000000' "$color"
+    done > /dev/tty1
+    printf '\033[2J\033[H\033[?25l' > /dev/tty1
+  ''}";
 
   users.users.greeter = {
     home = "/var/lib/yurice/greeter";
