@@ -79,7 +79,24 @@
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "yurice": "yurice"
+      }
+    },
+    "yurice": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794159104,
+        "narHash": "sha256-m/TpI1hz6Z1lIcMjZf5WYXMkuXOD5z6btEA6IteXZRI=",
+        "ref": "refs/heads/main",
+        "rev": "cc05c80879b380dc389c2dce07b1f4f70fb51d5c",
+        "revCount": 164,
+        "type": "git",
+        "url": "file:///home/yujiqo/.nixos/yurice"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///home/yujiqo/.nixos/yurice"
       }
     }
   },
