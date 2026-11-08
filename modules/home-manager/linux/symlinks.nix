@@ -6,6 +6,10 @@
   yurice = "${config.home.homeDirectory}/.nixos/yurice/config";
   dotfiles = "${config.home.homeDirectory}/.nixos/dotfiles/config";
 in {
+  xdg.configFile."yurice/custom" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${yurice}/custom";
+    force = true;
+  };
   xdg.configFile."niri" = {
     source = config.lib.file.mkOutOfStoreSymlink "${yurice}/niri";
     force = true;
