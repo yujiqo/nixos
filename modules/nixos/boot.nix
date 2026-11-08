@@ -12,6 +12,8 @@
       "rd.systemd.show_status=auto"
       "udev.log_level=3"
       "boot.shell_on_fail"
+      "console=tty12"
+      "vt.global_cursor_default=0"
     ];
 
     loader = {
