@@ -10,6 +10,11 @@
 
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-26.05";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    yurice = {
+      url = "git+file:///home/yujiqo/.nixos/yurice";
+      flake = false;
+    };
   };
 
   outputs = {
