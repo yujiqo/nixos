@@ -31,6 +31,7 @@
       "gimp"
       "mos"
       "quicklook-video"
+      "bitwarden"
     ];
   };
 }

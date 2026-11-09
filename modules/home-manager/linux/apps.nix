@@ -8,5 +8,6 @@
     obs-studio # screen recordings and streaming app
     steam # games
     modrinth-app # minecraft modding launcher
+    bitwarden-desktop # cross-platform password manager
   ];
 }
