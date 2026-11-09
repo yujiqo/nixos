@@ -19,6 +19,10 @@
   programs.nix-ld.libraries = with pkgs; [
     stdenv.cc.cc.lib
     zlib
+    alsa-lib
+    wayland
+    libxkbcommon
+    libglvnd
   ];
 
   environment.variables.SSL_CERT_FILE = "/etc/ssl/certs/ca-certificates.crt";
