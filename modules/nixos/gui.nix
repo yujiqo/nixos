@@ -106,6 +106,7 @@ in {
     style = "adwaita";
   };
   environment.variables.QT_STYLE_OVERRIDE = lib.mkForce null;
+  environment.sessionVariables.QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
 
   programs.localsend.enable = true;
 }
