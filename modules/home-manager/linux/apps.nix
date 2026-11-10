@@ -9,5 +9,6 @@
     steam # games
     modrinth-app # minecraft modding launcher
     bitwarden-desktop # cross-platform password manager
+    whatsapp-electron # the worst chatting app
   ];
 }
