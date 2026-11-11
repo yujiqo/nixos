@@ -10,5 +10,7 @@
     modrinth-app # minecraft modding launcher
     bitwarden-desktop # cross-platform password manager
     whatsapp-electron # the worst chatting app
+    qview # minimalist image viewer
+    celluloid # minimalist video viewer
   ];
 }
