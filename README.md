@@ -33,8 +33,8 @@ one user (`yujiqo`). stable `nixos-26.05` everywhere, `nixpkgs-unstable` only wh
 
 shared across hosts
 
-- desktop (linux): niri + quickshell, greetd, adw-gtk3, gnome/gtk portals
-- shell: fish + starship, kitty, tmux, neovim
+- desktop (linux): niri + quickshell, greetd, adw-gtk3, gnome/gtk portals. all from the yurice flake modules
+- shell: fish + starship, kitty, tmux, neovim. also from yurice (the mac gets this part only)
 - network: tailscale, ssh with keys only, nftables firewall
 - nix: flakes, weekly gc of anything older than 7 days
 - locale: `Asia/Almaty`, `en_US.UTF-8`, `us,ru` layout with caps ↔ escape and win+space to switch
@@ -47,7 +47,7 @@ shared across hosts
 
 ```text
 .
-├── flake.nix                     # inputs, hosts, exported modules, overlays, formatter
+├── flake.nix                     # inputs (incl. yurice), hosts, exported modules, overlays, formatter
 ├── hosts/
 │   ├── thinkpad/
 │   │   ├── nixos/                # configuration.nix, hardware-configuration.nix, modules/{hardware,network,users}
@@ -65,17 +65,57 @@ shared across hosts
 │       └── darwin/               # the mac
 ├── overlays/                     # additions · modifications · unstable-packages
 ├── pkgs/                         # custom packages (empty, waiting for a reason)
-├── yurice/                       # separate repo: the rice!!!
+├── yurice/                       # separate repo: the rice!!! (live checkout of the flake input)
 └── dotfiles/                     # separate repo: personal plain-text configs!!!
 ```
 
 > [!NOTE]
 > **`yurice/` and `dotfiles/` are separate git repos.** they're gitignored here and cloned inside this one.
 >
-> - [**yurice**](https://github.com/yujiqo/yurice): the rice.
+> - [**yurice**](https://github.com/yujiqo/yurice): the rice. also a flake input (`github:yujiqo/yurice`)
+>   that exports `nixosModules.default` and `homeModules.default`.
 > - [**dotfiles**](https://github.com/yujiqo/dotfiles): configs with personal settings.
 >
-> `symlinks.nix` links their `config/` dirs into `~/.config` with `mkOutOfStoreSymlink`, so you can edit them live without a rebuild.
+> the yurice home module installs the packages and links the configs. `programs.yurice.configDir` points it at
+> the local checkout, so the links go through `mkOutOfStoreSymlink` and you can edit the rice live without a rebuild.
+> `symlinks.nix` does the same for dotfiles, plus `~/.config/yurice/custom` → `yurice/config/custom/`
+> (gitignored in yurice, personal overrides like the `nixos-switch` fish abbrs live there).
+
+### how the rice is wired
+
+```nix
+# hosts/<linux host>/nixos/configuration.nix
+programs.yurice = {
+  enable = true;                    # niri, portals, fonts, pipewire, bluetooth, networkmanager, ...
+  greeter.enable = true;            # quickshell greeter on greetd
+  greeter.niriExtraConfig = ''...''; # output scaling for the greeter
+};
+
+# hosts/<host>/home-manager/home.nix
+programs.yurice = {
+  desktop.enable = true;            # linux only
+  terminal.enable = true;
+  configDir = "${config.home.homeDirectory}/.nixos/yurice/config";
+};
+```
+
+the system-level services (pipewire, upower, bluetooth, ...) are `mkDefault`, so a host can override them.
+neovim language servers are not part of the rice, they're in `modules/home-manager/common/neovim.nix`.
+
+<details>
+<summary><b>useful abbrs for the custom fish config</b></summary>
+
+the rice's `config.fish` sources `~/.config/yurice/custom/fish/config.fish` if it exists. it's untracked,
+so after a fresh clone recreate it at `yurice/config/custom/fish/config.fish`:
+
+```fish
+if status is-interactive
+  abbr -a nixos-switch "sudo nixos-rebuild switch --flake"
+  abbr -a darwin-switch "sudo darwin-rebuild switch --flake"
+end
+```
+
+</details>
 
 ---
 
@@ -103,10 +143,23 @@ sudo darwin-rebuild switch --flake .#macbook   # macbook
 ### maintain
 
 ```sh
-nix flake update   # bump nixpkgs, nixpkgs-unstable, home-manager, nix-darwin
-nix fmt .          # format every .nix file with alejandra
-nix flake show     # list what the flake exports
+nix flake update          # bump every input, yurice included
+nix flake update yurice   # pick up pushed yurice changes only
+nix fmt .                 # format every .nix file with alejandra
+nix flake show            # list what the flake exports
 ```
+
+### working on the rice
+
+config edits in `yurice/config/` apply live. changes to yurice's nix modules (packages, services, greeter)
+need a rebuild. to try them before pushing, build against the local checkout:
+
+```sh
+sudo nixos-rebuild switch --flake .#thinkpad --override-input yurice git+file://$HOME/.nixos/yurice
+```
+
+`git+file` only sees files git knows about, so `git add` (or `git add -N`) new files first.
+once it works, push yurice and run `nix flake update yurice` so the lock points at the new commit.
 
 > [!TIP]
 > on the mac, `yurice-sync` rebuilds the matugen palette from the current wallpaper
