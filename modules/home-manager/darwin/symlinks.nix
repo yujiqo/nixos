@@ -40,6 +40,11 @@ in {
     source = config.lib.file.mkOutOfStoreSymlink "${yurice}/less/key";
     force = true;
   };
+  xdg.configFile."lazygit" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${yurice}/lazygit";
+    force = true;
+    recursive = true;
+  };
 
   xdg.configFile."git" = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/git";
