@@ -92,6 +92,8 @@ in {
 
   programs.dconf.enable = true;
 
+  services.gnome.glib-networking.enable = true;
+
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
