@@ -1,60 +1,10 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{config, ...}: let
   yurice = "${config.home.homeDirectory}/.nixos/yurice/config";
   dotfiles = "${config.home.homeDirectory}/.nixos/dotfiles/config";
 in {
   xdg.configFile."yurice/custom" = {
     source = config.lib.file.mkOutOfStoreSymlink "${yurice}/custom";
     force = true;
-  };
-  xdg.configFile."niri" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${yurice}/niri";
-    force = true;
-    recursive = true;
-  };
-  xdg.configFile."fastfetch" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${yurice}/fastfetch";
-    force = true;
-    recursive = true;
-  };
-  xdg.configFile."kitty/current-theme.conf".source = config.lib.file.mkOutOfStoreSymlink "${yurice}/kitty/current-theme.conf";
-  xdg.configFile."kitty/kitty.conf".source = config.lib.file.mkOutOfStoreSymlink "${yurice}/kitty/kitty.conf";
-  xdg.configFile."kitty/kitty.local.conf".text = "shell ${pkgs.fish}/bin/fish";
-  xdg.configFile."fish" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${yurice}/fish";
-    force = true;
-    recursive = true;
-  };
-  xdg.configFile."starship.toml" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${yurice}/starship/starship.toml";
-    force = true;
-  };
-  xdg.configFile."tmux" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${yurice}/tmux";
-    force = true;
-    recursive = true;
-  };
-  xdg.configFile."nvim" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${yurice}/nvim";
-    force = true;
-    recursive = true;
-  };
-  home.file.".lesskey" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${yurice}/less/key";
-    force = true;
-  };
-  xdg.configFile."quickshell" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${yurice}/quickshell";
-    force = true;
-    recursive = true;
-  };
-  xdg.configFile."lazygit" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${yurice}/lazygit";
-    force = true;
-    recursive = true;
   };
 
   xdg.configFile."git" = {

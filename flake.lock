@@ -84,19 +84,23 @@
       }
     },
     "yurice": {
-      "flake": false,
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
       "locked": {
-        "lastModified": 1794345312,
-        "narHash": "sha256-awNku+vdn6KaoldfrDUJyaJ1GLXNHF+xhtQboLdyqfY=",
-        "ref": "refs/heads/main",
-        "rev": "ad4eb787d39483cf7a7de9b0b6689a3b5165090b",
-        "revCount": 212,
-        "type": "git",
-        "url": "file:///home/yujiqo/.nixos/yurice"
+        "lastModified": 1794504175,
+        "narHash": "sha256-8nW2UH7sBjrDn0TWOrifaD3VM0q49AEmNAyet9MBfkw=",
+        "owner": "yujiqo",
+        "repo": "yurice",
+        "rev": "768b806b1794f73ab8d46d83eab6190321b3eb1a",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/yujiqo/.nixos/yurice"
+        "owner": "yujiqo",
+        "repo": "yurice",
+        "type": "github"
       }
     }
   },

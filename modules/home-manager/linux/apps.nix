@@ -12,5 +12,6 @@
     whatsapp-electron # the worst chatting app
     qview # minimalist image viewer
     celluloid # minimalist video viewer
+    localsend # crossplatform air drop
   ];
 }

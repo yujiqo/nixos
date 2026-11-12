@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   lib,
   ...
@@ -6,7 +7,8 @@
   imports =
     lib.attrValues (import ./modules)
     ++ lib.attrValues inputs.self.homeModules.common
-    ++ lib.attrValues inputs.self.homeModules.darwin;
+    ++ lib.attrValues inputs.self.homeModules.darwin
+    ++ [inputs.yurice.homeModules.default];
 
   nixpkgs = {
     overlays = [
@@ -24,6 +26,11 @@
     username = "yujiqo";
     homeDirectory = "/Users/yujiqo";
     stateVersion = "26.05";
+  };
+
+  programs.yurice = {
+    terminal.enable = true;
+    configDir = "${config.home.homeDirectory}/.nixos/yurice/config";
   };
 
   programs.man.generateCaches = false;

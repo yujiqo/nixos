@@ -11,7 +11,7 @@
     text = ''
       state_dir="$HOME/.local/state/yurice"
       state_file="$state_dir/darwin-wallpaper"
-      matugen_config="$HOME/.nixos/yurice/config/matugen/config.toml"
+      matugen_config="${toString config.programs.yurice.configDir}/matugen/config.toml"
 
       wall="$(/usr/bin/osascript -e 'tell application "System Events" to get picture of current desktop' 2>/dev/null || true)"
 

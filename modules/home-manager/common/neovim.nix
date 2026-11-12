@@ -1,7 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    neovim # og text editor
-
     # lsp servers, formatters, linters
     efm-langserver # formatter and linter thing for neovim
     selene # lua lint
@@ -17,9 +15,5 @@
     marksman # markdown lsp
     sql-formatter # sql fmt
     sqls # sql lsp
-
-    # image.nvim deps
-    imagemagick # image.nvim dep
-    ghostscript # image.nvim dep for pdf files
   ];
 }

@@ -13,8 +13,19 @@
       ./modules/network.nix
 
       inputs.home-manager.nixosModules.home-manager
+      inputs.yurice.nixosModules.default
     ]
     ++ lib.attrValues inputs.self.nixosModules;
+
+  programs.yurice = {
+    enable = true;
+    greeter.enable = true;
+    greeter.niriExtraConfig = ''
+      output "eDP-1" {
+        scale 1
+      }
+    '';
+  };
 
   nixpkgs = {
     overlays = [
