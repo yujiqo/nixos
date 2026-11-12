@@ -52,7 +52,7 @@
       xkb = {
         layout = "us,ru";
         variant = "";
-        options = "caps:swapescape,grp:alt_shift_toggle";
+        options = "caps:swapescape,grp:win_space_toggle";
       };
     };
 
