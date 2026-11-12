@@ -14,14 +14,12 @@ _after some thinking... i have decided to stop thinking._
 ![flakes](https://img.shields.io/badge/flakes-enabled-1e1e2e?style=flat-square&logoColor=7EBAE4)
 ![formatter](https://img.shields.io/badge/fmt-alejandra-1e1e2e?style=flat-square)
 ![platforms](https://img.shields.io/badge/platforms-x86__64--linux%20·%20aarch64--darwin-1e1e2e?style=flat-square)
-![wm](https://img.shields.io/badge/wm-niri-1e1e2e?style=flat-square)
-![shell](https://img.shields.io/badge/shell-fish-1e1e2e?style=flat-square&logoColor=white)
 [![license](https://img.shields.io/badge/license-MIT-1e1e2e?style=flat-square)](LICENSE)
 
 </div>
 
 my nixos + nix-darwin config as one flake. three machines, two operating systems,
-one user (`yujiqo`). stable `nixos-26.05` everywhere, `nixpkgs-unstable` only where i ask for it.
+one user (`yujiqo`). stable `nixos-26.05` everywhere, `nixpkgs-unstable` only where i need it.
 
 ---
 
@@ -35,11 +33,11 @@ one user (`yujiqo`). stable `nixos-26.05` everywhere, `nixpkgs-unstable` only wh
 
 shared across hosts
 
-- desktop (linux): niri + quickshell, SDDM on wayland, adw-gtk3 dark, gnome/gtk portals
+- desktop (linux): niri + quickshell, greetd, adw-gtk3, gnome/gtk portals
 - shell: fish + starship, kitty, tmux, neovim
-- network: tailscale, ssh with keys only and no root login, nftables firewall that trusts the tailscale interface, systemd-resolved with `DNSSEC=allow-downgrade`
-- nix: flakes, no channels, no global registry, `auto-optimise-store`, weekly gc of anything older than 7 days
-- locale: `Asia/Almaty`, `en_US.UTF-8`, `us,ru` layout with caps ↔ escape and alt+shift to switch
+- network: tailscale, ssh with keys only, nftables firewall
+- nix: flakes, weekly gc of anything older than 7 days
+- locale: `Asia/Almaty`, `en_US.UTF-8`, `us,ru` layout with caps ↔ escape and win+space to switch
 
 ---
 
