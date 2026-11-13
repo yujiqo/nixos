@@ -26,6 +26,13 @@
           desktopEntry.icon = ./pwa-icons/claude.png;
           desktopEntry.categories = ["Network" "Utility"];
         };
+        "01M79HP32Z4EJP4JP164G6HXM9" = {
+          name = "ChatGPT";
+          url = "https://chatgpt.com/";
+          manifestUrl = "https://chatgpt.com/";
+          desktopEntry.icon = ./pwa-icons/chatgpt.png;
+          desktopEntry.categories = ["Network" "Utility"];
+        };
       };
     };
   };
