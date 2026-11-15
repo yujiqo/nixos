@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    ytmdesktop # youtube music client
     kitty # terminal emulator
     firefox # main web browser
     google-chrome # whenever i need chromium based stuff
