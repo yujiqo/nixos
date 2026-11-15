@@ -13,5 +13,6 @@
     qview # minimalist image viewer
     celluloid # minimalist video viewer
     localsend # crossplatform air drop
+    unstable.simplenote # simple note taking app
   ];
 }
