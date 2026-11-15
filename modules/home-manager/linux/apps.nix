@@ -1,6 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    obsidian # og note taking app
     kitty # terminal emulator
     firefox # main web browser
     google-chrome # whenever i need chromium based stuff
@@ -13,6 +12,5 @@
     qview # minimalist image viewer
     celluloid # minimalist video viewer
     localsend # crossplatform air drop
-    unstable.simplenote # simple note taking app
   ];
 }
