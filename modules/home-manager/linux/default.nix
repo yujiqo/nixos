@@ -4,5 +4,4 @@
   symlinks = ./symlinks.nix;
   fonts = ./fonts.nix;
   automount = ./automount.nix;
-  cli = ./cli.nix;
 }
