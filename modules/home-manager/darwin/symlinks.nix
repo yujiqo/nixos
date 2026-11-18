@@ -24,6 +24,16 @@ in {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/karabiner/karabiner.json";
     force = true;
   };
+  home.file.".codex/AGENTS.md" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/codex/AGENTS.md";
+    force = true;
+  };
+
+  home.file.".codex/rules/default.rules" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/codex/rules/default.rules";
+    force = true;
+  };
+
   home.file.".claude/settings.json" = {
     source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/claude/settings.json";
     force = true;
