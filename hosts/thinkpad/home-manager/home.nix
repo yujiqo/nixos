@@ -2,6 +2,7 @@
   config,
   inputs,
   lib,
+  pkgs,
   ...
 }: {
   imports =
@@ -30,6 +31,7 @@
 
   programs.yurice = {
     desktop.enable = true;
+    desktop.quickshellPackage = pkgs.unstable.quickshell;
     terminal.enable = true;
     configDir = "${config.home.homeDirectory}/.nixos/yurice/config";
   };

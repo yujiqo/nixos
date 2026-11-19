@@ -20,6 +20,7 @@
   programs.yurice = {
     enable = true;
     greeter.enable = true;
+    greeter.quickshellPackage = pkgs.unstable.quickshell;
     greeter.niriExtraConfig = ''
       output "eDP-1" {
         scale 1

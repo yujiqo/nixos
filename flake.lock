@@ -90,11 +90,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794644968,
-        "narHash": "sha256-07a5GrAN4TsEaVjGkYx81E7nVubmC2Fm4u+lr3OrnTg=",
+        "lastModified": 1795109360,
+        "narHash": "sha256-qoqNPmGTQSEpS+HRdDHgkZEUNTjz0uYiF/hUiM+O83U=",
         "owner": "yujiqo",
         "repo": "yurice",
-        "rev": "7e8e1305349e74463aa8b229c339af7d9d5a6867",
+        "rev": "e3958c6da344d9c31d0830d28852392986ec33a6",
         "type": "github"
       },
       "original": {
