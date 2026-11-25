@@ -1,5 +1,6 @@
 {...}: {
-  time.timeZone = "Asia/Almaty";
+  time.timeZone = null;
+  services.automatic-timezoned.enable = true;
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
